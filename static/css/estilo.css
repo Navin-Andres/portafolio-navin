@@ -1,0 +1,189 @@
+body{
+background-color: #FFF2D7;
+font-family: Arial, Helvetica, sans-serif;
+margin: 0%;
+}
+
+.menu1{
+    background-color: #102C57;
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    align-items: center;
+    padding: 10px;
+    text-decoration: none;
+    
+}
+
+.menu2{
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+    color: #f0f8ff;
+    
+}
+
+nav a{
+    padding-right: 10px;
+}
+
+nav a:hover{
+    background-color: white;
+    color: #102C57;
+    height: 20px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+
+.personal{
+    display: flex;
+   justify-content: center;
+  
+}
+
+.perfil{
+    background-color: bisque;
+    height: 350px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 50px;
+    box-shadow: 10px 10px 5px lightblue;
+    
+}
+
+
+.imagen1 img {
+width: 400px;
+height: 350px;
+border-radius: 50%;
+border:10px solid #FF9100;
+margin: 20px;
+
+}
+
+
+
+.servicios{
+    background-color: bisque;
+    
+}
+
+/* mis .servicios */
+.imagenes{
+display: grid;
+  grid-template-columns: 50px 50px 50px;
+  gap: 500px;
+ 
+ 
+
+}
+
+.imagenes1:hover{
+    background-color: #D1E9F6;
+    padding: 10px;
+}
+
+.imagenes1{
+    background-color: #FF9100;
+    padding: 50px;
+border-radius: 20px;
+width: 200px;
+height: 200px;
+text-align: center;
+
+}
+
+
+.Final{
+   background-color: bisque;
+   padding: 20px;
+   text-align: center;
+   font-size: 15px;
+
+}
+
+.texto{
+    text-align: center;
+    font-size: 20px;
+    font-family:  sans-serif;
+}
+
+.boton{
+    background-color: #102C57;
+    padding: 15px;
+    border-radius: 10px;
+    display: inline-block;
+    border: solid #f0f8ff;
+    text-decoration: none;
+    color: #f0f8ff;
+
+}
+
+.boton:hover{
+    background-color: #5B99C2;
+    padding: 10px;
+}
+
+.miperfil{
+    font-size: 20px;
+    background-color: khaki;
+    border-radius: 10px;
+    margin: 5%;
+    text-align: center;
+
+}
+
+
+/* formulario */
+.formulario{
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: khaki ;
+    border: 1px solid #5B99C2;
+    border-radius: 5px;
+    box-shadow: 10px 10px 5px lightblue;
+}
+  
+    label{
+        font-size: 20px;
+        display: block;
+        width: 100%;
+    }
+
+    input,textarea{
+        margin-bottom: 20px;
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    input:focus{
+        border: solid blue;
+    }
+
+    input[type="submit"]{
+        margin-bottom: 0%;
+        background: #102C57;
+        color: #f0f8ff;
+        border: none;
+    } 
+
+    input[type="submit"]:hover{
+        background: #FF9100;
+    }
+
+/* curriculum */
+
+.aptitudes{
+    display: flex;
+    background-color: #5B99C2;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FF9100;
+
+
+}
