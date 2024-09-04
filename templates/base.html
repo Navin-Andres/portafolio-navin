@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,10 +12,10 @@
         <h2 style="background-color:bisque; width: 500px;">Navin Balmaceda / Tecn.computacion</h2>
       </div>
         <nav>
-          <a href="http://127.0.0.1:5000/curriculum">curriculum</a> 
-          <a href="a" class="enlaces">proyectos</a>
-          <a href="http://127.0.0.1:5000/contacto">contacto</a>
-          <a href="a" class="enlaces">Ubicacion</a>
+          <a href="{{ url_for('home') }}">inicio</a> 
+          <a href="{{url_for('contacto') }}">contacto</a>
+          <a href="{{url_for('curriculum') }}">curriculum</a>
+          <a href="a" >Ubicacion</a>
     
         </nav>
           
