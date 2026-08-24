@@ -20,7 +20,7 @@ const projectData = [
 		demoUrl: 'https://portafolio-navin.vercel.app/',
 		githubUrl: 'https://github.com/Navin-Andres/Portafolio-navin',
 		description:
-			'Sitio web personal desarrollado en React, Vite y Tailwind CSS, diseñado para presentar proyectos, trayectoria y habilidades con un diseño moderno, responsive e interactivo.',
+			'Portafolio web personal desarrollado en React, Vite y Tailwind CSS, diseñado para presentar proyectos, trayectoria y habilidades con un diseño moderno, responsive e interactivo.',
 		stack: ['React', 'JavaScript', 'Vite', 'Tailwind CSS'],
 		points: [
 			'Diseño responsive y enfocado en la experiencia de usuario.',

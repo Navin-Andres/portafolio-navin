@@ -1,6 +1,12 @@
 import profilePhoto from '../assets/images/foto_perfil_github_navin.jpg'
+import { useLanguage } from '../context/LanguageContext'
+import es from '../i18n/es'
+import en from '../i18n/en'
 
 function Hero() {
+  const { lang } = useLanguage()
+  const t = lang === 'es' ? es.hero : en.hero
+
   const technologies = [
     { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
     { name: 'Flutter', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg' },
@@ -17,13 +23,12 @@ function Hero() {
   return (
     <section className="hero-section" id="inicio">
       <div className="hero-copy">
-        <p className="eyebrow"><span></span> Disponible para nuevos proyectos</p>
-        <p className="intro">Hola, soy</p>
+        <p className="eyebrow"><span></span> {t.available}</p>
+        <p className="intro">{t.greeting}</p>
         <h1>Navin Balmaceda<span>.</span></h1>
         <h2>Full Stack Developer</h2>
         <p className="hero-description">
-          Desarrollo aplicaciones web y móviles utilizando tecnologías modernas y
-          soluciones orientadas a resolver problemas reales.
+          {t.description}
         </p>
         <div className="social-links" aria-label="Redes y contacto">
           <a href="https://github.com/Navin-Andres" target="_blank" rel="noreferrer" aria-label="GitHub">
@@ -40,11 +45,11 @@ function Hero() {
           </a>
           <a className="button button-secondary" href="/CV-Navin-Balmaceda-Desarrollador-Flutter.pdf" target="_blank" rel="noreferrer">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14" /></svg>
-            Descargar CV
+            {t.downloadCV}
           </a>
         </div>
         <div className="technologies" id="skills">
-          <p>Tecnologías</p>
+          <p>{t.technologies}</p>
           <div className="technology-list">
             {technologies.map((technology) => (
               <span key={technology.name}>

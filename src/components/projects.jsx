@@ -3,6 +3,9 @@ import ecovalleHome from '../assets/images/Captura de pantalla 2026-08-12 155617
 import portafolioNavin from '../assets/images/portafolio-navin.png'
 import medicTotal from '../assets/images/medic total.png'
 import nitendoDs from '../assets/images/nitendo ds.png'
+import { useLanguage } from '../context/LanguageContext'
+import es from '../i18n/es'
+import en from '../i18n/en'
 
 const projectImages = {
 	'ecovalle-home': { src: ecovalleHome, alt: 'Pantalla principal de la aplicación Ecovalle' },
@@ -35,72 +38,76 @@ const techIcons = {
 }
 
 function Projects() {
+	const { lang } = useLanguage()
+	const t = lang === 'es' ? es.projects : en.projects
+	const projectsI18n = lang === 'es' ? es.projects_data : en.projects_data
+
 	return (
 		<section className="projects-screen" id="proyectos" aria-labelledby="projects-title">
 			<div className="projects-header">
-				<p className="projects-eyebrow">Portafolio</p>
-				<h1 id="projects-title">Proyectos realizados</h1>
-				<p>
-					Selección de trabajos y prototipos hechos con foco en interfaces, datos y
-					experiencias funcionales.
-				</p>
+				<p className="projects-eyebrow">{t.eyebrow}</p>
+				<h1 id="projects-title">{t.title}</h1>
+				<p>{t.subtitle}</p>
 			</div>
 
 			<div className="projects-grid">
-				{projectData.map((project) => (
-					<article className="project-card" key={project.title}>
-						{project.image && projectImages[project.image] && (
-							<div className="project-image">
-								<img
-									src={projectImages[project.image].src}
-									alt={projectImages[project.image].alt}
-								/>
+				{projectData.map((project, index) => {
+					const i18n = projectsI18n[index] || {}
+					return (
+						<article className="project-card" key={project.title}>
+							{project.image && projectImages[project.image] && (
+								<div className="project-image">
+									<img
+										src={projectImages[project.image].src}
+										alt={projectImages[project.image].alt}
+									/>
+								</div>
+							)}
+							<div className="project-card-top">
+								<span>{project.category}</span>
+								<h2>{project.title}</h2>
 							</div>
-						)}
-						<div className="project-card-top">
-							<span>{project.category}</span>
-							<h2>{project.title}</h2>
-						</div>
 
-						<p className="project-description">{project.description}</p>
+							<p className="project-description">{i18n.description || project.description}</p>
 
-						<ul className="project-stack" aria-label={`Tecnologías de ${project.title}`}>
-							{project.stack.map((technology) => (
-								<li key={technology} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-									{techIcons[technology] && (
-										<img
-											src={techIcons[technology]}
-											alt=""
-											style={{ width: '16px', height: '16px', objectFit: 'contain' }}
-										/>
+							<ul className="project-stack" aria-label={`${t.techLabel} ${project.title}`}>
+								{project.stack.map((technology) => (
+									<li key={technology} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+										{techIcons[technology] && (
+											<img
+												src={techIcons[technology]}
+												alt=""
+												style={{ width: '16px', height: '16px', objectFit: 'contain' }}
+											/>
+										)}
+										<span>{technology}</span>
+									</li>
+								))}
+							</ul>
+
+							{(project.demoUrl || project.githubUrl) && (
+								<div className="project-links">
+									{project.demoUrl && (
+										<a href={project.demoUrl} target="_blank" rel="noreferrer" className="project-link-button">
+											{t.viewDemo}
+										</a>
 									)}
-									<span>{technology}</span>
-								</li>
-							))}
-						</ul>
+									{project.githubUrl && (
+										<a href={project.githubUrl} target="_blank" rel="noreferrer" className="project-link-button project-link-button-secondary">
+											{t.viewGitHub}
+										</a>
+									)}
+								</div>
+							)}
 
-						{(project.demoUrl || project.githubUrl) && (
-							<div className="project-links">
-								{project.demoUrl && (
-									<a href={project.demoUrl} target="_blank" rel="noreferrer" className="project-link-button">
-										Ver demo
-									</a>
-								)}
-								{project.githubUrl && (
-									<a href={project.githubUrl} target="_blank" rel="noreferrer" className="project-link-button project-link-button-secondary">
-										Ver GitHub
-									</a>
-								)}
-							</div>
-						)}
-
-						<ul className="project-points">
-							{project.points.map((point) => (
-								<li key={point}>{point}</li>
-							))}
-						</ul>
-					</article>
-				))}
+							<ul className="project-points">
+								{(i18n.points || project.points).map((point) => (
+									<li key={point}>{point}</li>
+								))}
+							</ul>
+						</article>
+					)
+				})}
 			</div>
 		</section>
 	)

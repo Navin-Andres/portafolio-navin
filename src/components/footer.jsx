@@ -1,31 +1,36 @@
-function Footer() {
+import { useLanguage } from '../context/LanguageContext'
+import es from '../i18n/es'
+import en from '../i18n/en'
+
+function Footer({ onContactsClick, onAboutClick }) {
+	const { lang } = useLanguage()
+	const t = lang === 'es' ? es.footer : en.footer
+
 	return (
 		<footer className="site-footer">
 			<div className="site-footer-inner">
 				<div className="footer-brand-block">
-					<p className="footer-eyebrow">Portfolio</p>
+					<p className="footer-eyebrow">{t.eyebrow}</p>
 					<h2>Navin Balmaceda</h2>
-					<p>
-						Desarrollador full stack enfocado en interfaces, backend, datos y soluciones
-						funcionales.
-					</p>
+					<p>{t.tagline}</p>
 				</div>
 
 				<div className="footer-links-block" aria-label="Enlaces del pie de pagina">
-					<a href="https://github.com/NavinBalmaceda" target="_blank" rel="noreferrer">
+					<a href="https://github.com/Navin-Andres" target="_blank" rel="noreferrer">
 						GitHub
 					</a>
-					<a href="#contactos">Contacto</a>
-					<a href="#inicio">Acerca de mi</a>
+					<button type="button" onClick={onContactsClick}>{t.contact}</button>
+					<button type="button" onClick={onAboutClick}>{t.about}</button>
 				</div>
 			</div>
 
 			<div className="site-footer-bottom">
-				<span>Disenado y desarrollado por Navin Balmaceda.</span>
-				<span>Disponible para nuevos proyectos.</span>
+				<span>{t.credit}</span>
+				<span>{t.available}</span>
 			</div>
 		</footer>
 	)
 }
 
 export default Footer
+

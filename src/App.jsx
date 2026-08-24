@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { LanguageProvider } from './context/LanguageContext'
 import Navar from './components/navar'
 import Hero from './components/hero'
 import About from './components/about'
@@ -26,34 +27,39 @@ function App() {
   }
 
   return (
-    <main>
-      <Navar
-        activePage={screen}
-        theme={theme}
-        onThemeToggle={() => setTheme((currentTheme) => currentTheme === 'dark' ? 'light' : 'dark')}
-        onHomeClick={() => navigateTo('home')}
-        onAboutClick={() => navigateTo('about')}
-        onProjectsClick={() => navigateTo('projects')}
-        onSkillsClick={() => navigateTo('skills')}
-        onProfileClick={() => navigateTo('profile')}
-        onContactsClick={() => navigateTo('contacts')}
-      />
+    <LanguageProvider>
+      <main>
+        <Navar
+          activePage={screen}
+          theme={theme}
+          onThemeToggle={() => setTheme((currentTheme) => currentTheme === 'dark' ? 'light' : 'dark')}
+          onHomeClick={() => navigateTo('home')}
+          onAboutClick={() => navigateTo('about')}
+          onProjectsClick={() => navigateTo('projects')}
+          onSkillsClick={() => navigateTo('skills')}
+          onProfileClick={() => navigateTo('profile')}
+          onContactsClick={() => navigateTo('contacts')}
+        />
 
-      {screen === 'home' && <Hero />}
-      {screen === 'about' && <About />}
-      {screen === 'projects' && <Projects />}
-      {screen === 'skills' && <Skills />}
-      {screen === 'profile' && (
-        <>
-          <Experience />
-          <Certifications />
-          <Education />
-        </>
-      )}
-      {screen === 'contacts' && <Contacts />}
+        {screen === 'home' && <Hero />}
+        {screen === 'about' && <About />}
+        {screen === 'projects' && <Projects />}
+        {screen === 'skills' && <Skills />}
+        {screen === 'profile' && (
+          <>
+            <Experience />
+            <Certifications />
+            <Education />
+          </>
+        )}
+        {screen === 'contacts' && <Contacts />}
 
-      <Footer />
-    </main>
+        <Footer
+          onContactsClick={() => navigateTo('contacts')}
+          onAboutClick={() => navigateTo('about')}
+        />
+      </main>
+    </LanguageProvider>
   )
 }
 

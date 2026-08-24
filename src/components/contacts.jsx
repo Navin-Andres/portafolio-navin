@@ -1,12 +1,17 @@
+import { useLanguage } from '../context/LanguageContext'
+import es from '../i18n/es'
+import en from '../i18n/en'
+
 function Contacts() {
+	const { lang } = useLanguage()
+	const t = lang === 'es' ? es.contacts : en.contacts
+
 	return (
 		<section className="contacts-screen" id="contactos" aria-labelledby="contacts-title">
 			<div className="contacts-header">
-				<p className="projects-eyebrow">Contactos</p>
-				<h2 id="contacts-title">Conectemos</h2>
-				<p>
-					Estoy abierto a oportunidades laborales, proyectos freelance y colaboraciones.
-				</p>
+				<p className="projects-eyebrow">{t.eyebrow}</p>
+				<h2 id="contacts-title">{t.title}</h2>
+				<p>{t.subtitle}</p>
 			</div>
 
 			<div className="contacts-grid">

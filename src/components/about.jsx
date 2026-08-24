@@ -1,37 +1,40 @@
+import { useLanguage } from '../context/LanguageContext'
+import es from '../i18n/es'
+import en from '../i18n/en'
+
 function About() {
+  const { lang } = useLanguage()
+  const t = lang === 'es' ? es.about : en.about
+
   return (
     <section className="about-screen" id="about" aria-labelledby="about-title">
       <div className="about-header">
-        <p className="projects-eyebrow">About me</p>
-        <h1 id="about-title">Sobre mi</h1>
-        <p>
-          Soy desarrollador Full Stack y estudiante de Ingenieria de Sistemas, enfocado en crear soluciones digitales utiles, claras y faciles de usar.
-        </p>
+        <p className="projects-eyebrow">{t.eyebrow}</p>
+        <h1 id="about-title">{t.title}</h1>
+        <p>{t.intro}</p>
       </div>
 
       <div className="about-grid">
         <article className="about-card about-card-featured">
-          <h2>Mi enfoque</h2>
-          <p>
-            Combino desarrollo web y movil con una mirada practica: entender el problema, proponer una solucion y construir una experiencia funcional para las personas que la usan.
-          </p>
+          <h2>{t.approachTitle}</h2>
+          <p>{t.approachText}</p>
         </article>
 
         <article className="about-card">
-          <h2>Lo que hago</h2>
+          <h2>{t.whatIDoTitle}</h2>
           <ul>
-            <li>Desarrollo de aplicaciones web con React y Node.js.</li>
-            <li>Aplicaciones moviles con Flutter.</li>
-            <li>Integracion de bases de datos y servicios en la nube.</li>
+            {t.whatIDo.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
           </ul>
         </article>
 
         <article className="about-card">
-          <h2>Como trabajo</h2>
+          <h2>{t.howIWorkTitle}</h2>
           <ul>
-            <li>Aprendizaje continuo y atencion al detalle.</li>
-            <li>Comunicacion cercana con equipos y usuarios.</li>
-            <li>Soluciones mantenibles y orientadas a resultados.</li>
+            {t.howIWork.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
           </ul>
         </article>
       </div>
