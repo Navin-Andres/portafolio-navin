@@ -1,5 +1,4 @@
 import githubIcon from '../assets/icons/github-white.svg'
-import powerBiIcon from '../assets/icons/power-bi.svg'
 import { useLanguage } from '../context/LanguageContext'
 import es from '../i18n/es'
 import en from '../i18n/en'
@@ -37,7 +36,6 @@ function Skills() {
       skills: [
         ['Git', 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg'],
         ['GitHub', githubIcon],
-        ['Power BI', powerBiIcon],
         ['Vite', 'https://cdn.simpleicons.org/vite/646CFF'],
         ['Figma', 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg'],
       ],

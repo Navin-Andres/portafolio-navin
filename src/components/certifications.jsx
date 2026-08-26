@@ -8,12 +8,6 @@ function Certifications() {
 
 	const certifications = [
 		{
-			title: lang === 'es' ? 'Visualización de Datos con Power BI' : 'Data Visualization with Power BI',
-			issuer: 'SENA',
-			year: '2025',
-			hours: `48 ${t.hours}`,
-		},
-		{
 			title: lang === 'es' ? 'Manejo Básico de Excel' : 'Basic Excel Skills',
 			issuer: 'SENA',
 			year: '2024',

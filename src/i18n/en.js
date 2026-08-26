@@ -79,13 +79,6 @@ const en = {
           'Built and maintained institutional web modules with React, Node.js/Express, and PostgreSQL, integrating authentication with JWT and Google OAuth 2.0, with production support and direct collaboration with end users.',
       },
       {
-        role: 'Fullstack Developer (Freelance)',
-        company: 'Independent',
-        period: 'Aug 2024 - Jun 2026',
-        summary:
-          'Built client solutions using Node.js/Express, Firebase/Firestore, and Flutter, managing remote projects from requirements gathering to deployment.',
-      },
-      {
         role: 'Support Technician',
         company: 'Air Services Ingeniería SAS (AISEING)',
         period: 'Nov 2022 - Mar 2023',
