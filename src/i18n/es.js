@@ -4,7 +4,7 @@ const es = {
     about: 'Sobre mí',
     projects: 'Proyectos',
     skills: 'Habilidades',
-    profile: 'Trayectoria',
+    profile: 'Experiencia',
     contacts: 'Contactos',
     openMenu: 'Abrir menú',
     closeMenu: 'Cerrar menú',
@@ -16,7 +16,7 @@ const es = {
     available: 'Disponible para nuevos proyectos',
     greeting: 'Hola, soy',
     description:
-      'Desarrollo aplicaciones web y móviles utilizando tecnologías modernas y soluciones orientadas a resolver problemas reales.',
+      'Desarrollo software escalable con tecnologías modernas y soluciones reales.',
     downloadCV: 'Descargar CV',
     technologies: 'Tecnologías',
   },
@@ -25,21 +25,24 @@ const es = {
     eyebrow: 'About me',
     title: 'Sobre mí',
     intro:
-      'Soy desarrollador Full Stack y estudiante de Ingeniería de Sistemas, enfocado en crear soluciones digitales útiles, claras y fáciles de usar.',
+      'Soy desarrollador Full Stack y estudiante de Ingeniería de Sistemas. Me gusta transformar ideas en soluciones simples, útiles y fáciles de usar. Me caracterizo por el aprendizaje continuo, el avance constante y el compromiso de llevar cada proyecto hasta su finalización.',
+    story:
+      'Me gusta entender lo que las personas necesitan y convertirlo en soluciones simples. Desarrollo con React, Node.js, Flutter y Python; pruebo cada detalle y mantengo una comunicación cercana para que el resultado funcione de verdad.',
     approachTitle: 'Mi enfoque',
     approachText:
-      'Combino desarrollo web y móvil con una mirada práctica: entender el problema, proponer una solución y construir una experiencia funcional para las personas que la usan.',
+      'Entiendo el problema, propongo una solución clara y construyo productos útiles y funcionales.',
     whatIDoTitle: 'Lo que hago',
     whatIDo: [
       'Desarrollo de aplicaciones web con React y Node.js.',
       'Aplicaciones móviles con Flutter.',
-      'Integración de bases de datos y servicios en la nube.',
+      'Programación backend y automatizaciones con Python.',
+      'Bases de datos y servicios en la nube.',
     ],
     howIWorkTitle: 'Cómo trabajo',
     howIWork: [
-      'Aprendizaje continuo y atención al detalle.',
-      'Comunicación cercana con equipos y usuarios.',
-      'Soluciones mantenibles y orientadas a resultados.',
+      'Planifico, desarrollo y pruebo cada solución.',
+      'Mantengo comunicación clara con equipos y usuarios.',
+      'Entrego código ordenado y orientado a resultados.',
     ],
   },
 
@@ -67,23 +70,27 @@ const es = {
 
   experience: {
     eyebrow: 'Experiencia',
-    title: 'Trayectoria profesional',
+    title: 'Experiencia profesional',
     subtitle:
       'Un resumen corto de mi trabajo en desarrollo, soporte y colaboración con equipos y usuarios.',
+    filterLabel: 'Filtrar experiencia',
+    workFilter: 'Experiencia laboral',
+    educationFilter: 'Formación académica',
     items: [
       {
-        role: 'Desarrollador Fullstack',
+        role: 'Desarrollador de Software (Prácticas Profesionales)',
         company: 'Areandina · Consultorio Jurídico',
         period: 'Mar 2026 - Jul 2026',
-        summary:
-          'Desarrollé y mantuve módulos web institucionales con React, Node.js/Express y PostgreSQL, integrando autenticación con JWT y Google OAuth 2.0, además de soporte en producción y trabajo directo con usuarios finales.',
       },
       {
         role: 'Técnico de Soporte',
         company: 'Air Services Ingeniería SAS (AISEING)',
         period: 'Nov 2022 - Mar 2023',
-        summary:
-          'Resolví incidentes técnicos y administré accesos en plataformas corporativas.',
+      },
+      {
+        role: 'Auxiliar de Sistemas (Practicante SENA)',
+        company: 'Clínica Médicos Alta Complejidad',
+        period: 'Dic 2019 - Feb 2021',
       },
     ],
   },
@@ -121,7 +128,20 @@ const es = {
     eyebrow: 'Contactos',
     title: 'Conectemos',
     subtitle:
-      'Estoy abierto a oportunidades laborales, proyectos freelance y colaboraciones.',
+      'Estoy abierto a oportunidades laborales y colaboraciones.',
+    phone: 'Teléfono',
+    copy: 'Copiar',
+    copied: 'Copiado',
+    formTitle: 'Envíame un mensaje',
+    formName: 'Nombre',
+    formEmail: 'Correo electrónico',
+    formMessage: 'Mensaje',
+    formNamePlaceholder: 'Tu nombre',
+    formEmailPlaceholder: 'tu correo electrónico',
+    formMessagePlaceholder: 'Escribe tu mensaje',
+    formButton: 'Enviar mensaje',
+    formWhatsAppButton: 'Enviar por WhatsApp',
+    formSubject: 'Mensaje desde mi portafolio',
   },
 
   footer: {

@@ -16,7 +16,7 @@ const en = {
     available: 'Available for new projects',
     greeting: 'Hi, I\'m',
     description:
-      'I build web and mobile applications using modern technologies and solutions focused on solving real-world problems.',
+      'I build scalable software with modern technologies and real-world solutions.',
     downloadCV: 'Download CV',
     technologies: 'Technologies',
   },
@@ -25,21 +25,24 @@ const en = {
     eyebrow: 'About me',
     title: 'About me',
     intro:
-      'I\'m a Full Stack developer and Systems Engineering student, focused on building useful, clear, and easy-to-use digital solutions.',
+      'I\'m a Full Stack developer and Systems Engineering student. I enjoy turning ideas into simple, useful, and easy-to-use solutions. I am characterized by continuous learning, steady progress, and a strong commitment to seeing every project through to completion.',
+    story:
+      'I like to understand what people need and turn it into simple solutions. I build with React, Node.js, Flutter, and Python; I test every detail and keep communication close so the result works in practice.',
     approachTitle: 'My approach',
     approachText:
-      'I combine web and mobile development with a practical mindset: understand the problem, propose a solution, and build a functional experience for the people who use it.',
+      'I understand the problem, propose a clear solution, and build useful, functional products.',
     whatIDoTitle: 'What I do',
     whatIDo: [
       'Web application development with React and Node.js.',
+      'Backend programming and automation with Python.',
       'Mobile applications with Flutter.',
-      'Database integration and cloud services.',
+      'Databases and cloud services.',
     ],
     howIWorkTitle: 'How I work',
     howIWork: [
-      'Continuous learning and attention to detail.',
-      'Close communication with teams and users.',
-      'Maintainable, results-oriented solutions.',
+      'I plan, develop, and test every solution.',
+      'I communicate clearly with teams and users.',
+      'I deliver organized, results-oriented code.',
     ],
   },
 
@@ -70,20 +73,24 @@ const en = {
     title: 'Professional Experience',
     subtitle:
       'A brief summary of my work in development, support, and collaboration with teams and users.',
+    filterLabel: 'Filter experience',
+    workFilter: 'Work experience',
+    educationFilter: 'Academic background',
     items: [
       {
-        role: 'Fullstack Developer',
+        role: 'Software Developer (Professional Internship)',
         company: 'Areandina · Legal Clinic',
         period: 'Mar 2026 - Jul 2026',
-        summary:
-          'Built and maintained institutional web modules with React, Node.js/Express, and PostgreSQL, integrating authentication with JWT and Google OAuth 2.0, with production support and direct collaboration with end users.',
       },
       {
         role: 'Support Technician',
         company: 'Air Services Ingeniería SAS (AISEING)',
         period: 'Nov 2022 - Mar 2023',
-        summary:
-          'Resolved technical incidents and managed access permissions on corporate platforms.',
+      },
+      {
+        role: 'Systems Assistant (SENA Intern)',
+        company: 'Clínica Médicos Alta Complejidad',
+        period: 'Dec 2019 - Feb 2021',
       },
     ],
   },
@@ -121,7 +128,20 @@ const en = {
     eyebrow: 'Contact',
     title: 'Let\'s connect',
     subtitle:
-      'I\'m open to job opportunities, freelance projects, and collaborations.',
+      'I\'m open to job opportunities and collaborations.',
+    phone: 'Phone',
+    copy: 'Copy',
+    copied: 'Copied',
+    formTitle: 'Send me a message',
+    formName: 'Name',
+    formEmail: 'Email',
+    formMessage: 'Message',
+    formNamePlaceholder: 'Your name',
+    formEmailPlaceholder: 'your email address',
+    formMessagePlaceholder: 'Write your message',
+    formButton: 'Send message',
+    formWhatsAppButton: 'Send via WhatsApp',
+    formSubject: 'Message from my portfolio',
   },
 
   footer: {

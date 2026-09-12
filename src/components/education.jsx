@@ -1,6 +1,8 @@
 import { useLanguage } from '../context/LanguageContext'
 import es from '../i18n/es'
 import en from '../i18n/en'
+import areandinaLogo from '../assets/images/Areaandina.jfif'
+import senaLogo from '../assets/images/logosena.png'
 
 function Education() {
 	const { lang } = useLanguage()
@@ -15,8 +17,10 @@ function Education() {
 			</div>
 
 			<div className="education-grid">
-				{t.items.map((item) => (
+				{t.items.map((item, index) => (
 					<article className="education-card" key={item.degree}>
+						{index === 0 ? <img className="education-logo" src={areandinaLogo} alt="Logo de Areandina" /> : null}
+						{index === 1 ? <img className="education-logo" src={senaLogo} alt="Logo del SENA" /> : null}
 						<p className="education-period">{item.period}</p>
 						<h3>{item.degree}</h3>
 						<p className="education-company">{item.institution}</p>

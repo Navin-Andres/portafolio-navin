@@ -8,9 +8,9 @@ function Certifications() {
 
 	const certifications = [
 		{
-			title: lang === 'es' ? 'Manejo Básico de Excel' : 'Basic Excel Skills',
+			title: lang === 'es' ? 'Excel Intermedio' : 'Intermediate Excel',
 			issuer: 'SENA',
-			year: '2024',
+			year: '2026',
 			hours: `40 ${t.hours}`,
 		},
 		{

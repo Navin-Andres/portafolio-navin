@@ -7,18 +7,6 @@ function Hero() {
   const { lang } = useLanguage()
   const t = lang === 'es' ? es.hero : en.hero
 
-  const technologies = [
-    { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-    { name: 'Flutter', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg' },
-    { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
-    { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
-    { name: 'Node.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
-    { name: 'PostgreSQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
-    { name: 'MySQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
-    { name: 'Firebase', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg' },
-    { name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
-  ]
-
   return (
     <section className="hero-section" id="inicio">
       <div className="hero-copy">
@@ -46,17 +34,6 @@ function Hero() {
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14" /></svg>
             {t.downloadCV}
           </a>
-        </div>
-        <div className="technologies" id="skills">
-          <p>{t.technologies}</p>
-          <div className="technology-list">
-            {technologies.map((technology) => (
-              <span key={technology.name}>
-                <img src={technology.icon} alt="" aria-hidden="true" />
-                {technology.name}
-              </span>
-            ))}
-          </div>
         </div>
       </div>
 

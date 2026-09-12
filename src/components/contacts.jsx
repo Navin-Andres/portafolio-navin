@@ -1,10 +1,40 @@
+import { useState } from 'react'
 import { useLanguage } from '../context/LanguageContext'
 import es from '../i18n/es'
 import en from '../i18n/en'
 
 function Contacts() {
+	const [copied, setCopied] = useState('')
 	const { lang } = useLanguage()
 	const t = lang === 'es' ? es.contacts : en.contacts
+
+	const handleCopy = async (value, label) => {
+		await navigator.clipboard.writeText(value)
+		setCopied(label)
+		window.setTimeout(() => setCopied(''), 1800)
+	}
+
+	const handleSubmit = (event) => {
+		event.preventDefault()
+		const formData = new FormData(event.currentTarget)
+		const subject = encodeURIComponent(`${t.formSubject}: ${formData.get('name')}`)
+		const body = encodeURIComponent(
+			`${t.formName}: ${formData.get('name')}\n${t.formEmail}: ${formData.get('email')}\n\n${formData.get('message')}`,
+		)
+		const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=navinbalmaceda83@gmail.com&su=${subject}&body=${body}`
+		const emailWindow = window.open(gmailUrl, '_blank', 'noopener,noreferrer')
+		if (!emailWindow) window.location.href = `mailto:navinbalmaceda83@gmail.com?subject=${subject}&body=${body}`
+	}
+
+	const handleWhatsApp = (event) => {
+		const form = event.currentTarget.form
+		if (!form.reportValidity()) return
+		const formData = new FormData(form)
+		const message = encodeURIComponent(
+			`${t.formName}: ${formData.get('name')}\n${t.formEmail}: ${formData.get('email')}\n\n${formData.get('message')}`,
+		)
+		window.open(`https://wa.me/573159057387?text=${message}`, '_blank', 'noopener,noreferrer')
+	}
 
 	return (
 		<section className="contacts-screen" id="contactos" aria-labelledby="contacts-title">
@@ -14,20 +44,47 @@ function Contacts() {
 				<p>{t.subtitle}</p>
 			</div>
 
-			<div className="contacts-grid">
-				<a href="mailto:navinbalmaceda83@gmail.com" className="contact-card">
+			<div className="contacts-layout">
+				<form className="contact-form" onSubmit={handleSubmit}>
+					<h3>{t.formTitle}</h3>
+					<label>
+						{t.formName}
+						<input name="name" type="text" placeholder={t.formNamePlaceholder} required />
+					</label>
+					<label>
+						{t.formEmail}
+						<input name="email" type="email" placeholder={t.formEmailPlaceholder} required />
+					</label>
+					<label>
+						{t.formMessage}
+						<textarea name="message" rows="5" placeholder={t.formMessagePlaceholder} required></textarea>
+					</label>
+					<div className="contact-form-actions">
+						<button className="button button-primary" type="submit">{t.formButton}</button>
+						<button className="button button-whatsapp" type="button" onClick={handleWhatsApp}>{t.formWhatsAppButton}</button>
+					</div>
+				</form>
+
+				<div className="contacts-grid">
+				<div className="contact-card">
 					<span className="contact-icon" aria-hidden="true">
 						<svg viewBox="0 0 24 24"><path d="M3.5 5.5h17v13h-17zM4.5 6.5 12 12l7.5-5.5" /></svg>
 					</span>
 					<span>Email</span>
 					<small>navinbalmaceda83@gmail.com</small>
-				</a>
+					<button className="copy-button" type="button" aria-label={copied === 'email' ? t.copied : t.copy} title={copied === 'email' ? t.copied : t.copy} onClick={() => handleCopy('navinbalmaceda83@gmail.com', 'email')}>
+						<svg viewBox="0 0 24 24" aria-hidden="true"><path d={copied === 'email' ? 'm5 12 4 4L19 6' : 'M9 9h10v10H9zM5 15H4V5h10v1'} /></svg>
+					</button>
+				</div>
 				<a href="https://www.linkedin.com/in/navin-balmaceda/" target="_blank" rel="noreferrer" className="contact-card">
 					<span className="contact-icon" aria-hidden="true">
 						<svg viewBox="0 0 24 24"><path d="M6.2 9.2H3.4V21h2.8V9.2ZM4.8 3A1.7 1.7 0 1 0 4.8 6.4 1.7 1.7 0 0 0 4.8 3ZM20.8 14.2c0-3.6-1.9-5.3-4.5-5.3-2.1 0-3 1.2-3.5 2v-1.7H10V21h2.8v-5.8c0-1.5.3-3 2.2-3 1.9 0 2.1 1.7 2.1 3.1V21h2.8v-6.8Z" /></svg>
 					</span>
 					<span>LinkedIn</span>
 					<small>navin-balmaceda</small>
+					<button className="copy-button" type="button" aria-label={copied === 'linkedin' ? t.copied : t.copy} title={copied === 'linkedin' ? t.copied : t.copy} onClick={(event) => { event.preventDefault(); handleCopy('https://www.linkedin.com/in/navin-balmaceda/', 'linkedin') }}>
+						<svg viewBox="0 0 24 24" aria-hidden="true"><path d={copied === 'linkedin' ? 'm5 12 4 4L19 6' : 'M9 9h10v10H9zM5 15H4V5h10v1'} /></svg>
+					</button>
 				</a>
 				<a href="https://github.com/Navin-Andres" target="_blank" rel="noreferrer" className="contact-card">
 					<span className="contact-icon" aria-hidden="true">
@@ -35,7 +92,19 @@ function Contacts() {
 					</span>
 					<span>GitHub</span>
 					<small>Navin-Andres</small>
+					<button className="copy-button" type="button" aria-label={copied === 'github' ? t.copied : t.copy} title={copied === 'github' ? t.copied : t.copy} onClick={(event) => { event.preventDefault(); handleCopy('https://github.com/Navin-Andres', 'github') }}>
+						<svg viewBox="0 0 24 24" aria-hidden="true"><path d={copied === 'github' ? 'm5 12 4 4L19 6' : 'M9 9h10v10H9zM5 15H4V5h10v1'} /></svg>
+					</button>
 				</a>
+				<div className="contact-card">
+					<span className="contact-icon" aria-hidden="true">☎</span>
+					<span>{t.phone}</span>
+					<small>315 905 73 87</small>
+					<button className="copy-button" type="button" aria-label={copied === 'phone' ? t.copied : t.copy} title={copied === 'phone' ? t.copied : t.copy} onClick={() => handleCopy('315 905 73 87', 'phone')}>
+						<svg viewBox="0 0 24 24" aria-hidden="true"><path d={copied === 'phone' ? 'm5 12 4 4L19 6' : 'M9 9h10v10H9zM5 15H4V5h10v1'} /></svg>
+					</button>
+				</div>
+				</div>
 			</div>
 		</section>
 	)

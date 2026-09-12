@@ -6,8 +6,6 @@ import About from './components/about'
 import Projects from './components/projects'
 import Skills from './components/skills'
 import Experience from './components/experience'
-import Certifications from './components/certifications'
-import Education from './components/education'
 import Contacts from './components/contacts'
 import Footer from './components/footer'
 import './App.css'
@@ -21,9 +19,52 @@ function App() {
     localStorage.setItem('theme', theme)
   }, [theme])
 
+  useEffect(() => {
+    const sectionPages = [
+      ['inicio', 'home'],
+      ['about', 'about'],
+      ['proyectos', 'projects'],
+      ['skills', 'skills'],
+      ['experiencia', 'profile'],
+      ['contactos', 'contacts'],
+    ]
+
+    const sections = sectionPages
+      .map(([id, page]) => ({ element: document.getElementById(id), page }))
+      .filter(({ element }) => element)
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleSection = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((first, second) => second.intersectionRatio - first.intersectionRatio)[0]
+
+        if (visibleSection) {
+          const section = sections.find(({ element }) => element === visibleSection.target)
+          if (section) setScreen(section.page)
+        }
+      },
+      { rootMargin: '-20% 0px -65% 0px', threshold: [0, 0.25, 0.5] },
+    )
+
+    sections.forEach(({ element }) => observer.observe(element))
+    return () => observer.disconnect()
+  }, [])
+
   const navigateTo = (nextScreen) => {
     setScreen(nextScreen)
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+
+    const sectionIds = {
+      home: 'inicio',
+      about: 'about',
+      projects: 'proyectos',
+      skills: 'skills',
+      profile: 'experiencia',
+      contacts: 'contactos',
+    }
+
+    const section = document.getElementById(sectionIds[nextScreen])
+    section?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
   return (
@@ -41,18 +82,12 @@ function App() {
           onContactsClick={() => navigateTo('contacts')}
         />
 
-        {screen === 'home' && <Hero />}
-        {screen === 'about' && <About />}
-        {screen === 'projects' && <Projects />}
-        {screen === 'skills' && <Skills />}
-        {screen === 'profile' && (
-          <>
-            <Experience />
-            <Certifications />
-            <Education />
-          </>
-        )}
-        {screen === 'contacts' && <Contacts />}
+        <Hero />
+        <About />
+        <Projects />
+        <Skills />
+        <Experience />
+        <Contacts />
 
         <Footer
           onContactsClick={() => navigateTo('contacts')}
