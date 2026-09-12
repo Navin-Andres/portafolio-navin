@@ -137,37 +137,38 @@ const en = {
   projects_data: [
     {
       description:
-        'Mobile app built with Flutter/Dart, Firebase, and Google Maps API for geolocating waste disposal points, reporting complaints and suggestions, and providing recycling educational content.',
-      points: [
-        'Geolocation of waste disposal points.',
-        'Complaints, suggestions, and educational recycling content reporting.',
-      ],
-    },
-    {
-      description:
-        'Personal web portfolio built with React, Vite, and CSS, designed to showcase projects, experience, and skills with a modern, responsive, and interactive design.',
-      points: [
-        'Responsive design focused on user experience.',
-        'Modular structure with reusable components and dynamic data.',
-        'Interactive sections for projects, experience, and skills.',
-      ],
-    },
-    {
-      description:
-        'Cross-platform app built with Flutter for Nintendo DS enthusiasts. Acts as an interactive digital library to explore the console\'s historical catalog with real-time data.',
-      points: [
-        'Exploration of Nintendo DS historical catalog with real-time data.',
-        'Cross-platform architecture with Flutter for iOS and Android.',
-        'Integration with Firebase and Twitch for dynamic content.',
-      ],
-    },
-    {
-      description:
         'Academic web application for medical management, patient registration, and centralized appointment scheduling.',
       points: [
         'Patient and available doctor registration and lookup.',
         'Appointment creation and search by patient ID.',
         'Flask backend with cloud MySQL database (Aiven), deployed on Render.',
+      ],
+    },
+    {
+      description:
+        'Web application for hoodies with unique designs and an urban style.',
+      points: [
+        'Analyzed the client frontend requirements.',
+        'Implemented product aggregation in the administrator catalogs.',
+        'Developed the home interface, hoodie product cards, and shopping cart with WhatsApp confirmation.',
+        'Implemented administrative login and product and price management.',
+      ],
+    },
+    {
+      description:
+        'Mobile app that helps users find waste disposal points, submit reports, and learn more about recycling.',
+      points: [
+        'Added geolocation for waste disposal points.',
+        'Developed a system for complaints, suggestions, and recycling educational content.',
+      ],
+    },
+    {
+      description:
+        'Digital library for Nintendo DS enthusiasts to explore the game catalog and discover information about the console.',
+      points: [
+        'Designed the exploration of the Nintendo DS catalog with real-time data.',
+        'Developed the cross-platform application for iOS and Android.',
+        'Implemented Firebase and Twitch integration for dynamic content.',
       ],
     },
   ],

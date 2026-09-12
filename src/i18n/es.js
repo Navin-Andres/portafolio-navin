@@ -137,37 +137,38 @@ const es = {
   projects_data: [
     {
       description:
-        'Aplicación móvil en Flutter/Dart con Firebase y Google Maps API, para geolocalización de puntos de disposición de residuos, reporte de quejas, sugerencias y contenidos educativos sobre el reciclaje.',
+        'Aplicación web para organizar la atención de una clínica, gestionar pacientes y facilitar la programación de citas.',
       points: [
-        'Geolocalización de puntos de disposición de residuos.',
-        'Reportes de quejas, sugerencias y contenidos educativos sobre el reciclaje.',
+        'Desarrollé el registro y la consulta de pacientes y médicos disponibles.',
+        'Implementé la creación y búsqueda de citas por identificación del paciente.',
+        'Configuré el backend en Flask con una base de datos MySQL en la nube mediante Aiven y Render.',
       ],
     },
     {
       description:
-        'Portafolio web personal desarrollado en React, Vite y CSS, diseñado para presentar proyectos, trayectoria y habilidades con un diseño moderno, responsive e interactivo.',
+        'App web de Buzos con diseños únicos y estilo urbano.',
       points: [
-        'Diseño responsive y enfocado en la experiencia de usuario.',
-        'Estructura modular con componentes reutilizables y datos dinámicos.',
-        'Secciones interactivas para proyectos, experiencia y habilidades.',
+        'Analicé los requerimientos del Frontend del cliente',
+        'Resolví las agregaciones de los productos en catalogos del administrador',
+        'Desarrollé la interfaz de inicio, card de productos de buzos, y carrito de compra de confirmacion de whatsapp.',
+        'Implementé Inicio de sesion adminstrativo y gestion de productos y precios.',
       ],
     },
     {
       description:
-        'Aplicación multiplataforma desarrollada con Flutter para entusiastas de la Nintendo DS. Funciona como una biblioteca digital interactiva que permite explorar el catálogo histórico de la consola con datos en tiempo real.',
+        'Aplicación móvil que ayuda a encontrar puntos de disposición de residuos, enviar reportes y aprender más sobre el reciclaje.',
       points: [
-        'Exploración del catálogo histórico de Nintendo DS con datos en tiempo real.',
-        'Arquitectura multiplataforma con Flutter para iOS y Android.',
-        'Integración con Firebase y Twitch para contenido dinámico.',
+        'Agregué la geolocalización de puntos de disposición de residuos.',
+        'Desarrollé el sistema de reportes de quejas, sugerencias y contenidos educativos sobre reciclaje.',
       ],
     },
     {
       description:
-        'Aplicación web académica para la gestión médica, registro de pacientes y programación centralizada de citas.',
+        'Biblioteca digital para los amantes de la Nintendo DS, donde pueden explorar el catálogo de juegos y descubrir información sobre la consola.',
       points: [
-        'Registro y consulta de pacientes y médicos disponibles.',
-        'Creación y búsqueda de citas por identificación del paciente.',
-        'Arquitectura backend en Flask con base de datos MySQL en la nube (Aiven), desplegada en Render.',
+        'Diseñé la exploración del catálogo histórico de Nintendo DS con datos en tiempo real.',
+        'Desarrollé la aplicación multiplataforma para iOS y Android.',
+        'Implementé la integración con Firebase y Twitch para mostrar contenido dinámico.',
       ],
     },
   ],
